@@ -31,9 +31,6 @@ function addFilter(field, operator, values) {
       $(this).attr('disabled', true);
     }
   });
-
-  // Patch
-  addSelect2ToSelectTags()
 }
 
 function toggleMultiSelect(el) {
@@ -47,19 +44,6 @@ function toggleMultiSelect(el) {
     else
       el.attr('size', 4);
   }
-  // Patch
-  addSelect2ToSelectTags()
-}
-
-function addSelect2ToSelectTags() {
-  $(document).ready(function(){
-    if ((typeof $().select2) === 'function') {
-      $('#filters select.value').select2({
-        containerCss: {width: '300px', minwidth: '300px'},
-        width: 'style'
-      })
-    }
-  })
 }
 
 function buildDateTimeFilterRow(field, operator, values) {
